@@ -15,6 +15,7 @@ export const businessData = {
     horario: "Lun - Sáb: 9:00 am - 8:00 pm",
     logo: "/assets/logo.png",
     heroImagen: "/assets/hero.png",
+    sitioUrl: "https://demo-servicio2.pages.dev/", // URL completa de tu sitio web
     nosotros: {
       titulo: "Sobre Nosotros",
       descripcion: "Bella Vita Studio nació con la pasión de transformar la belleza y el bienestar en una experiencia única. Con más de 10 años de experiencia, nuestro equipo de profesionales está comprometido a ofrecerte servicios de alta calidad en un ambiente relajante y acogedor.",

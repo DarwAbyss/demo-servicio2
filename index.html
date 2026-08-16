@@ -6,6 +6,20 @@
     <meta name="theme-color" content="#1E3A8A" />
     <title>Bella Vita Studio</title>
     
+    <!-- Open Graph Meta Tags para WhatsApp y redes sociales -->
+    <meta property="og:title" content="Bella Vita Studio" data-og-title />
+    <meta property="og:description" content="Belleza y bienestar en cada detalle" data-og-description />
+    <meta property="og:image" content="/assets/hero.png" data-og-image />
+    <meta property="og:url" content="" data-og-url />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bella Vita Studio" data-og-site-name />
+    
+    <!-- Twitter Card (opcional, para mejor compatibilidad) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bella Vita Studio" data-twitter-title />
+    <meta name="twitter:description" content="Belleza y bienestar en cada detalle" data-twitter-description />
+    <meta name="twitter:image" content="/assets/hero.png" data-twitter-image />
+    
     <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -169,6 +183,18 @@
         // Generar URL del mapa dinámicamente usando la dirección
         const mapaUrl = `https://www.google.com/maps?q=${encodeURIComponent(general.direccionCompleta)}&output=embed`;
         document.querySelectorAll("[data-ubicacion-mapa]").forEach(el => { el.src = mapaUrl; });
+        
+        // Actualizar meta tags de Open Graph
+        document.querySelectorAll("[data-og-title]").forEach(el => el.setAttribute("content", general.nombre));
+        document.querySelectorAll("[data-og-description]").forEach(el => el.setAttribute("content", general.eslogan));
+        document.querySelectorAll("[data-og-image]").forEach(el => el.setAttribute("content", general.heroImagen));
+        document.querySelectorAll("[data-og-url]").forEach(el => el.setAttribute("content", general.sitioUrl));
+        document.querySelectorAll("[data-og-site-name]").forEach(el => el.setAttribute("content", general.nombre));
+        
+        // Actualizar meta tags de Twitter Card
+        document.querySelectorAll("[data-twitter-title]").forEach(el => el.setAttribute("content", general.nombre));
+        document.querySelectorAll("[data-twitter-description]").forEach(el => el.setAttribute("content", general.eslogan));
+        document.querySelectorAll("[data-twitter-image]").forEach(el => el.setAttribute("content", general.heroImagen));
         
         const waFloat = document.getElementById("whatsapp-float");
         if (waFloat) waFloat.href = mensajeWhatsApp("sus servicios");
